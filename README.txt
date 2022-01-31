@@ -8,3 +8,6 @@
 
 Правила:
 Нельзя касаться краев игрового поля, нельзя есть саму змейку.
+
+Ссылка GithubPages
+https://zubastu.github.io/snakeGame/
