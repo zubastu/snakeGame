@@ -17,10 +17,12 @@ let food = {
 }
 
 let snake = [];
+
 snake[0] = {
     x: 9 * cell,
     y: 10 * cell,
 }
+
 document.addEventListener('keydown', direction);
 
 let dir;
@@ -46,7 +48,6 @@ function eatSelf(head, arrSnake){
     });
 }
 
-
 function drawGame(){
     context.drawImage( gameField, 0, 0 );
     context.drawImage( gameFood, food.x, food.y );
@@ -68,8 +69,6 @@ function drawGame(){
     if(dir === 'up') snakeY -= cell;
     if(dir === 'down') snakeY += cell;
 
-
-
     if(snakeX === food.x && snakeY === food.y){
         score++;
         food = {
@@ -79,10 +78,12 @@ function drawGame(){
     } else
         snake.pop();
 
-    if(snakeX < cell || snakeX > cell * 17){
+    if(snakeX < cell || snakeX > cell * 17
+       || snakeY < cell * 3 || snakeY > cell * 17){
         clearInterval(game);
         showDefeat();
     }
+
     const newHead = {
         x: snakeX,
         y: snakeY,
@@ -90,11 +91,13 @@ function drawGame(){
     eatSelf(newHead, snake);
     snake.unshift(newHead);
 }
+
 function showDefeat(){
     context.fillStyle = 'red';
     context.font = '30px Arial';
     context.fillText(`Game Over score:${score}`, cell * 5, cell * 10)
 }
+
 const game = setInterval(drawGame, 100);
 
 
