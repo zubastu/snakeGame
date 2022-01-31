@@ -3,3 +3,13 @@ canvas{
     margin: 0 auto;
 }
 
+.description{
+    text-align: center;
+    font-size: 24px;
+    margin: 0 auto;
+}
+.rules{
+    text-align: center;
+    font-size: 15px;
+    margin: 0 auto;
+}
